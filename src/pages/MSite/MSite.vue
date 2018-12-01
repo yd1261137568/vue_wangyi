@@ -14,41 +14,8 @@
       <!--导航-->
       <div class="nav">
         <ul class="nav_list">
-          <li class="nav_item active">
-            <a href="javascript:;">推荐</a>
-          </li>
-          <li class="nav_item">
-            <a href="javascript:;">居家</a>
-          </li>
-          <li class="nav_item">
-            <a href="javascript:;">鞋包配饰</a>
-          </li>
-          <li class="nav_item">
-            <a href="javascript:;">服装</a>
-          </li>
-          <li class="nav_item">
-            <a href="javascript:;">电器</a>
-          </li>
-          <li class="nav_item">
-            <a href="javascript:;">洗护</a>
-          </li>
-          <li class="nav_item">
-            <a href="javascript:;">饮食</a>
-          </li>
-          <li class="nav_item">
-            <a href="javascript:;">餐厨</a>
-          </li>
-          <li class="nav_item">
-            <a href="javascript:;">餐厨</a>
-          </li>
-          <li class="nav_item">
-            <a href="javascript:;">餐厨</a>
-          </li>
-          <li class="nav_item">
-            <a href="javascript:;">餐厨</a>
-          </li>
-          <li class="nav_item">
-            <a href="javascript:;">餐厨</a>
+          <li class="nav_item" v-for="(dataItem,index) in data" :key="index" :class="{active:index === currentIndex}" @click="clickLi(index)">
+            <a href="javascript:;">{{dataItem.name}}</a>
           </li>
         </ul>
       </div>
@@ -56,27 +23,18 @@
     <!--轮播-->
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="https://yanxuan.nosdn.127.net/da8aa8ab0c32dd22c0bddee10764afbf.jpg?imageView&quality=75&thumbnail=750x0" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://yanxuan.nosdn.127.net/b412d997a1abdb2585210645424fb21a.jpg?imageView&quality=75&thumbnail=750x0" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://yanxuan.nosdn.127.net/8d1c9771ff59205fb1b884d2a6b10ade.png?imageView&quality=75&thumbnail=750x0" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://yanxuan.nosdn.127.net/089fdc9bfdc75ccfbe9c349d0096804b.jpg?imageView&quality=75&thumbnail=750x0" alt="">
+        <div class="swiper-slide" v-for="(bannerItem,index) in banner" :key="index" >
+          <img :src="bannerItem.picUrl" alt="">
         </div>
       </div>
       <!-- 如果需要分页器 -->
-      <div class="swiper-pagination">
-        <ul class="swiper_list">
-          <li class="swiper_item on"></li>
-          <li class="swiper_item"></li>
-          <li class="swiper_item"></li>
-          <li class="swiper_item"></li>
-        </ul>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="icon_three">
+      <div class="item" v-for="(item,index) in msite.policyDescList">
+        <img :src="item.icon"/>
+        <span>{{item.desc}}</span>
       </div>
     </div>
     <Split/>
@@ -127,11 +85,11 @@
         <div class="other_types">
           <a href="javascript:;">
             <span>饮食榜</span>
-            <img src="http://yanxuan.nosdn.127.net/8b7bde0b395e2bda54505cf4c3b7880b.png?imageView&quality=65&thumbnail=200x200" alt="">
+            <img src="http://yanxuan.nosdn.127.net/64f33b256b0f8660b8b6184dbf9bfdc2.png?imageView&quality=65&thumbnail=200x200" alt="">
           </a>
           <a href="javascript:;">
             <span>饮食榜</span>
-            <img src="http://yanxuan.nosdn.127.net/8b7bde0b395e2bda54505cf4c3b7880b.png?imageView&quality=65&thumbnail=200x200" alt="">
+            <img src="http://yanxuan.nosdn.127.net/73a065d6fc8c32197b54421808c54788.png?imageView&quality=65&thumbnail=200x200" alt="">
           </a>
           <a href="javascript:;">
             <span>饮食榜</span>
@@ -161,81 +119,12 @@
       </div>
       <Split/>
 
-      <div class="fashion_type">
-        <a href="javascript:;">
-          <img src="http://yanxuan.nosdn.127.net/2e8193e872ec918aa80a33c4181238df.png?imageView&quality=65&thumbnail=330x330" alt="">
-          <p>女式超长毛呢大衣</p>
-          <div class="fashion_price">
-            <span class="currentPrice">￥1481.2</span>
-            <del>￥1899</del>
-          </div>
-          <div class="woman">女士风格周</div>
-        </a>
-        <a href="javascript:;">
-          <img src="http://yanxuan.nosdn.127.net/2e8193e872ec918aa80a33c4181238df.png?imageView&quality=65&thumbnail=330x330" alt="">
-          <p>女式超长毛呢大衣</p>
-          <div class="fashion_price">
-            <span class="currentPrice">￥1481.2</span>
-            <del>￥1899</del>
-          </div>
-          <div class="woman">女士风格周</div>
-        </a>
-        <a href="javascript:;">
-          <img src="http://yanxuan.nosdn.127.net/2e8193e872ec918aa80a33c4181238df.png?imageView&quality=65&thumbnail=330x330" alt="">
-          <p>女式超长毛呢大衣</p>
-          <div class="fashion_price">
-            <span class="currentPrice">￥1481.2</span>
-            <del>￥1899</del>
-          </div>
-          <div class="woman">女士风格周</div>
-        </a>
-        <a href="javascript:;">
-        <img src="http://yanxuan.nosdn.127.net/2e8193e872ec918aa80a33c4181238df.png?imageView&quality=65&thumbnail=330x330" alt="">
-        <p>女式超长毛呢大衣</p>
-        <div class="fashion_price">
-          <span class="currentPrice">￥1481.2</span>
-          <del>￥1899</del>
-        </div>
-        <div class="woman">女士风格周</div>
-      </a>
-        <a href="javascript:;">
-        <img src="http://yanxuan.nosdn.127.net/2e8193e872ec918aa80a33c4181238df.png?imageView&quality=65&thumbnail=330x330" alt="">
-        <p>女式超长毛呢大衣</p>
-        <div class="fashion_price">
-          <span class="currentPrice">￥1481.2</span>
-          <del>￥1899</del>
-        </div>
-        <div class="woman">女士风格周</div>
-      </a>
-        <a href="javascript:;">
-        <img src="http://yanxuan.nosdn.127.net/2e8193e872ec918aa80a33c4181238df.png?imageView&quality=65&thumbnail=330x330" alt="">
-        <p>女式超长毛呢大衣</p>
-        <div class="fashion_price">
-          <span class="currentPrice">￥1481.2</span>
-          <del>￥1899</del>
-        </div>
-        <div class="woman">女士风格周</div>
-      </a>
-        <a href="javascript:;">
-          <img src="http://yanxuan.nosdn.127.net/2e8193e872ec918aa80a33c4181238df.png?imageView&quality=65&thumbnail=330x330" alt="">
-          <p>女式超长毛呢大衣</p>
-          <div class="fashion_price">
-            <span class="currentPrice">￥1481.2</span>
-            <del>￥1899</del>
-          </div>
-          <div class="woman">女士风格周</div>
-        </a>
-        <a href="javascript:;">
-          <img src="http://yanxuan.nosdn.127.net/2e8193e872ec918aa80a33c4181238df.png?imageView&quality=65&thumbnail=330x330" alt="">
-          <p>女式超长毛呢大衣</p>
-          <div class="fashion_price">
-            <span class="currentPrice">￥1481.2</span>
-            <del>￥1899</del>
-          </div>
-          <div class="woman">女士风格周</div>
-        </a>
-      </div>
+      <ScrollX/>
+
     </section>
+
+    <!--footer-->
+    <MsiteFoot/>
   </div>
 
 </template>
@@ -243,21 +132,53 @@
   import BScroll from 'better-scroll';
   import Swiper from 'swiper';
   import {mapState} from 'vuex';
+  import MsiteFoot from '../../components/MsiteFoot/MsiteFoot.vue';
 
   export default {
+    data () {
+      return {
+        currentIndex:0
+      }
+    },
+
     mounted () {
+      //触发异步actions，将异步数据保存在state中
+      this.$store.dispatch('getBanner');
+      this.$store.dispatch('getData');
       new BScroll('.nav', {
         scrollX:true,
         click: true
-      }),
+      });
 
-      new Swiper('.swiper-container', {
-        loop: true, // 循环模式选项
-      })
+      this.$store.dispatch('getMsist');
+
+    },
+    methods:{
+      clickLi (index) {
+        this.currentIndex = index
+      }
     },
     computed:{
-      ...mapState(['banner'])
+      ...mapState(['banner','msite','data'])
+    },
+    watch:{
+      banner () {
+        this.$nextTick(() => {
+          new Swiper('.swiper-container', {
+            loop: true, // 循环模式选项
+            autoplay:true,
+            // 如果需要分页器
+            pagination: {
+              el: '.swiper-pagination',
+            },
+          })
+        })
+      }
+    },
+    components:{
+      MsiteFoot
     }
+
   }
 
 </script>
@@ -300,28 +221,26 @@
               border 1px solid #ccc
         .nav
           display flex
-          flex-flow nowrap
-          flex-direction row
-          width 100%
+          width 750px
           height 60px
           font-size 30px
           font-weight 700
           margin-bottom 7px
           .nav_list
             display flex
-            align-items flex-start
-            text-align: center
+            flex-flow nowrap
+            flex-direction row
             height 60px
             line-height 60px
-            clearFix()
             .nav_item
+              text-align: center
+              width 80px
               height 60px
-              float: left
-              padding 0 20px
-              white-space nowrap
+              margin 0 20px
               &.active
                 border-bottom 5px solid #b4282d
                 a
+                  font-weight 700
                   color #b4282d
 
       .swiper-container
@@ -336,30 +255,36 @@
           .swiper-slide
             width 100%
             height 100%
-        .swiper-pagination
-          width 100%
-          height 50px
-          position: relative
-          margin-top -50px
-          .swiper_list
-            position: absolute
-            left 50%
-            top 50%
-            margin-top -2px
-            margin-left -110px
-            display: flex
-            .swiper_item
-              width 50px
-              height 4px
-              margin 0 4px
-              background #ccc
-              &.on
-                background #b4282d
-
+            img
+              width 750px
+              height 400px
+      .icon_three
+        margin-bottom: 12px
+        background: #fff
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 100%
+        margin-top: 20px
+        .item
+          display: flex
+          width: 33%
+          height 40px
+          margin-left: 15px
+          color: #b4282d
+          img
+           width 24px
+           height 24px
+           vertical-align middle
+          span
+            font-size 24px;
+            margin-left: 5px
+            font-weight 700
       .content
         width 100%
-        padding 20px 20px 98px
+        /*padding 10px 0*/
         .new_person_gifts
+          padding 0 20px
           h2
             font-size 36px
             text-align: center
@@ -407,10 +332,8 @@
                   position: absolute
                   left 130px
                   top 30px
-
-
-
         .hot_list
+          padding 0 20px
           width 100%
           p
             font-size 36px
@@ -471,34 +394,22 @@
                 margin-left -60px
                 margin-top -60px
 
-        .fashion_type
-          display flex
-
-          a
-            width 200px
-            height 318px
-            margin 20px 10px
-            text-align: center
-            display flex
-            flex-direction column
-            img
-              width 200px
-              height 200px
-              background #F5F5F5
-              margin-bottom 10px
-            p
-              font-size 24px
-            .fashion_price
-              font-size 24px
-              margin 10px 0
-              .currentPrice
-                color red
-            .woman
-              margin 0 auto
-              font-size 26px
-              width 160px
-              background orange
-              color white
-
-
 </style>
+<style lang="stylus" rel="stylesheet/stylus">
+  .swiper-pagination-bullets
+    width 100%
+    height 50px
+    margin-top -30px
+    z-index 10
+    position: relative
+    display: flex
+    justify-content center
+    .swiper-pagination-bullet
+      width 50px
+      height 4px
+      background #ccc
+      margin 0 4px
+      &.swiper-pagination-bullet-active
+        background #b4282d
+</style>
+

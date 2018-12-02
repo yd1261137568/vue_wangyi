@@ -13,8 +13,8 @@ Mock.mock('/data', {code:0, data: data})
 Mock.mock('/banner', {code:0, focusList: msite_data.focusList})
 //返回msite页数据的接口
 Mock.mock('/msite', {code:0, msite: msite_data})
-//返回detail页数据的接口
-Mock.mock('/detail', {code:0, detail: shiwu_data})
+//返回识物页数据的接口
+Mock.mock('/recognition', {code:0, recognition: shiwu_data})
 //返回分类页nav数据
 Mock.mock('/nav', {code:0, nav: data_nav})
 

@@ -3,11 +3,11 @@
     <div class="header">购物车</div>
     <div class="service">
       <span>30天无忧退货</span>
-      <span>30天无忧退货</span>
-      <span>30天无忧退货</span>
+      <span>48小时快速退款</span>
+      <span>满88元免邮费</span>
     </div>
     <img class="shopPic" src="../../assets/logo.png" alt="">
-    <button class="btn" @click="$router.replace('/profile')">登录</button>
+    <button class="btn" @click="$router.replace('/login')">登录</button>
   </div>
 </template>
 <script>

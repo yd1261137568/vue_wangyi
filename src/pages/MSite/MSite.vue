@@ -85,35 +85,35 @@
         <div class="other_types">
           <a href="javascript:;">
             <span>饮食榜</span>
-            <img src="http://yanxuan.nosdn.127.net/64f33b256b0f8660b8b6184dbf9bfdc2.png?imageView&quality=65&thumbnail=200x200" alt="">
+            <img src="https://yanxuan.nosdn.127.net/afefef84a592743d93b85b8d11bbc707.png?imageView&quality=65&thumbnail=200x200" alt="">
           </a>
           <a href="javascript:;">
-            <span>饮食榜</span>
-            <img src="http://yanxuan.nosdn.127.net/73a065d6fc8c32197b54421808c54788.png?imageView&quality=65&thumbnail=200x200" alt="">
+            <span>电器榜</span>
+            <img src="https://yanxuan.nosdn.127.net/362a8249b48d91d99604680b5471b507.png?imageView&quality=65&thumbnail=200x200" alt="">
           </a>
           <a href="javascript:;">
-            <span>饮食榜</span>
-            <img src="http://yanxuan.nosdn.127.net/8b7bde0b395e2bda54505cf4c3b7880b.png?imageView&quality=65&thumbnail=200x200" alt="">
+            <span>鞋包配饰榜</span>
+            <img src="https://yanxuan.nosdn.127.net/cbbdd7c5622a0eaab31e42247909c959.png?imageView&quality=65&thumbnail=200x200" alt="">
           </a>
           <a href="javascript:;">
-            <span>饮食榜</span>
-            <img src="http://yanxuan.nosdn.127.net/8b7bde0b395e2bda54505cf4c3b7880b.png?imageView&quality=65&thumbnail=200x200" alt="">
+            <span>洗护榜</span>
+            <img src="https://yanxuan.nosdn.127.net/2d43d642d928240ef2013e8da1c133b2.png?imageView&quality=65&thumbnail=200x200" alt="">
           </a>
           <a href="javascript:;">
-            <span>饮食榜</span>
-            <img src="http://yanxuan.nosdn.127.net/8b7bde0b395e2bda54505cf4c3b7880b.png?imageView&quality=65&thumbnail=200x200" alt="">
+            <span>餐厨榜</span>
+            <img src="https://yanxuan.nosdn.127.net/f79d6194ad32a781eeb6a434f2267f4f.png?imageView&quality=65&thumbnail=200x200" alt="">
           </a>
           <a href="javascript:;">
-            <span>饮食榜</span>
-            <img src="http://yanxuan.nosdn.127.net/8b7bde0b395e2bda54505cf4c3b7880b.png?imageView&quality=65&thumbnail=200x200" alt="">
+            <span>文体榜</span>
+            <img src="https://yanxuan.nosdn.127.net/55425f24345d01992d61a1646325ac94.png?imageView&quality=65&thumbnail=200x200" alt="">
           </a>
           <a href="javascript:;">
-            <span>饮食榜</span>
-            <img src="http://yanxuan.nosdn.127.net/8b7bde0b395e2bda54505cf4c3b7880b.png?imageView&quality=65&thumbnail=200x200" alt="">
+            <span>婴童榜</span>
+            <img src="https://yanxuan.nosdn.127.net/1a5b0d77b8f5ccbcb777f16997dd351d.png?imageView&quality=65&thumbnail=200x200" alt="">
           </a>
           <a href="javascript:;">
-            <span>饮食榜</span>
-            <img src="http://yanxuan.nosdn.127.net/8b7bde0b395e2bda54505cf4c3b7880b.png?imageView&quality=65&thumbnail=200x200" alt="">
+            <span>特色区榜</span>
+            <img src="https://yanxuan.nosdn.127.net/652a56ba4762111d19735841296f4e98.png?imageView&quality=65&thumbnail=200x200" alt="">
           </a>
         </div>
       </div>
@@ -191,7 +191,7 @@
         position: fixed
         /*left 0*/
         top 0
-        z-index 10
+        z-index 50
         background #fff
         .header
           display flex

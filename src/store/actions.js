@@ -1,12 +1,14 @@
 import {
   RECEIVE_BANNER,
   RECEIVE_MSITE,
-  RECEIVE_DATA
+  RECEIVE_DATA,
+  RECEIVE_RECOGNITION
 } from './mutation-types'
 import {
   reqBanner,
   reqMsite,
-  reqData
+  reqData,
+  reqRecognition
 } from '../api'
 
 export default {
@@ -34,6 +36,15 @@ export default {
     if(result.code === 0) {
       const data = result.data;
       commit(RECEIVE_DATA,{data});
+    }
+  },
+
+  //异步获取recognition信息
+  async getRecognition({commit}){
+    const result = await reqRecognition();
+    if(result.code === 0) {
+      const recognition = result.data;
+      commit(RECEIVE_RECOGNITION,{recognition});
     }
   }
 

@@ -1,4 +1,6 @@
 
+// import {Header} from 'mint-ui';
+
 import Vue from 'vue';
 import App from './App';
 import router from './router';
@@ -6,6 +8,7 @@ import store from './store'
 
 import Split from './components/Split/Split.vue';
 import ScrollX from './components/ScrollX/ScrollX.vue';
+import TopHeader from './components/TopHeader/TopHeader.vue';
 
 
 
@@ -13,6 +16,10 @@ import ScrollX from './components/ScrollX/ScrollX.vue';
 Vue.component('Split',Split);
 //横向滑屏
 Vue.component('ScrollX',ScrollX);
+//注册全局header标签
+// Vue.component(Header.name, Header);
+
+Vue.component('TopHeader',TopHeader);
 
 import './mock/mockServer';
 

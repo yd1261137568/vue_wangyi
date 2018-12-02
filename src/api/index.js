@@ -7,6 +7,6 @@ export const reqMsite = () => ajax('/msite');
 //请求data中的数据
 export const reqData = () => ajax('/data');
 
-export const reqDetail = () => ajax('/detail');
+export const reqRecognition = () => ajax('/recognition');
 
 export const reqNav = () => ajax('/nav');

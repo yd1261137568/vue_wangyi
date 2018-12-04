@@ -21,13 +21,15 @@
       <form class="formMsgCommit">
         <div class="msg_login">
           <div class="phone">
-            <lable class="phone_placeHolder" name="">请输入手机号2</lable>
-            <div class="phone_line"></div>
+            <!--<lable class="phone_placeHolder" name="">请输入手机号2</lable>-->
+            <input type="text" class="phone_placeHolder" placeholder="请输入手机号">
+          <!--  <div class="phone_line"></div>-->
           </div>
           <div class="code">
-            <lable class="code_placeHolder" name="">请输入短信验证码</lable>
-            <div class="code_line"></div>
-            <span>获取验证码</span>
+            <!--<lable class="code_placeHolder" name="">请输入短信验证码</lable>-->
+            <input type="text" class="code_placeHolder" placeholder="请输入短信验证码">
+            <!--<div class="code_line"></div>-->
+            <button class="getCode">获取验证码</button>
           </div>
           <div class="hasProblem">
             <span>遇到问题？</span>
@@ -43,12 +45,10 @@
       <form class="formEmailCommit">
         <div class="email_login" >
           <div class="email">
-            <lable class="email_placeHolder" name="1">请输入邮箱</lable>
-            <div class="email_line"></div>
+            <input type="text" class="email_placeHolder" placeholder="请输入邮箱账号">
           </div>
           <div class="email_pwd">
-            <lable class="email_pwdPlaceHolder" name="2">请输入邮箱密码</lable>
-            <div class="email_line"></div>
+            <input type="text" class="email_pwdPlaceHolder" placeholder="请输入邮箱密码">
           </div>
           <div class="regisetOrForgetPwd">
             <span>注册账号</span>
@@ -159,13 +159,12 @@
           width 100%
           height 80px
           .phone_placeHolder
-            font-size 28px
-            color #bdbdbd
-          .phone_line
+            border-bottom 1px solid #ccc
+            outline none
             width 100%
-            height 1px
-            background #c5cddb
-            margin-top 30px
+            height 80px
+            line-height 80px
+            font-size 28px
         .code
           width 100%
           height 90px
@@ -173,28 +172,24 @@
           margin-top 25px
           clearFix()
           position: relative
+          display flex
           .code_placeHolder
-            float left
-            font-size 28px
-            color #bdbdbd
-          .code_line
+            border-bottom 1px solid #ccc
+            outline none
             width 100%
-            height 1px
-            background #c5cddb
-            position: absolute
-            left 0
-            bottom 0
-          span
+            height 80px
+            line-height 80px
             font-size 28px
-            display inline-block
+          .getCode
+            font-size 28px
             width 200px
             height 60px
             line-height 60px
             text-align: center
             border 1px solid #c5cddb
-            float right
             color #bdbdbd
             border-radius 10px
+            background transparent
         .hasProblem
           display flex
           justify-content space-between
@@ -237,8 +232,15 @@
           width 100%
           height 80px
           .email_placeHolder
+            border-bottom 1px solid #ccc
+            outline none
+            width 100%
+            height 80px
+            line-height 80px
             font-size 28px
-            color #bdbdbd
+
+            /*font-size 28px*/
+            /*color #bdbdbd*/
           .email_line
             width 100%
             height 1px
@@ -252,9 +254,13 @@
           clearFix()
           position: relative
           .email_pwdPlaceHolder
-            float left
+            border-bottom 1px solid #ccc
+            outline none
+            width 100%
+            height 80px
+            line-height 80px
             font-size 28px
-            color #bdbdbd
+
           .email_line
             width 100%
             height 1px
@@ -266,7 +272,6 @@
           display flex
           justify-content space-between
           font-size 28px
-          color #bdbdbd
           margin 40px 0
       .email_login_button
         width 100%

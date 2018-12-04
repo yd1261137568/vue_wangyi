@@ -12,9 +12,10 @@ import Login from '../pages/Login/Login.vue';
 Vue.use(Router);
 
 export default new Router({
+  mode:'history',
   routes: [
     {
-      path: '/msite',
+      path: '/msite/:id',
       component: MSite,
       meta: {
         showFooter: true
@@ -54,7 +55,7 @@ export default new Router({
     },
     {
       path: '/',
-      redirect: '/msite'
+      redirect: '/msite/0'
     },
   ]
 })

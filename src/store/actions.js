@@ -3,7 +3,9 @@ import {
   RECEIVE_MSITE,
   RECEIVE_DATA,
   RECEIVE_RECOGNITION,
-  RECEIVE_SORT
+  RECEIVE_SORT,
+  RECEIVE_ID
+
 } from './mutation-types'
 import {
   reqBanner,
@@ -62,7 +64,9 @@ export default {
       typeof cb === 'function' && cb();
     }
   },
-
-
+  //同步获取pamas中的id
+  getId({commit},index){
+    commit(RECEIVE_ID,{index});
+  }
 
 }

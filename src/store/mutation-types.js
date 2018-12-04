@@ -9,3 +9,5 @@ export const RECEIVE_DATA = 'receive_data';
 export const RECEIVE_RECOGNITION = 'receive_recognition';
 //接受分类中的数据
 export const RECEIVE_SORT = 'receive_sort';
+// 接收params中的id
+export const RECEIVE_ID = 'RECEIVE_ID';

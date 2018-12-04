@@ -6,7 +6,7 @@
       <span>48小时快速退款</span>
       <span>满88元免邮费</span>
     </div>
-    <img class="shopPic" src="../../assets/logo.png" alt="">
+    <img class="shopPic" src="//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noCart-a8fe3f12e5.png" alt="">
     <button class="btn" @click="$router.replace('/login')">登录</button>
   </div>
 </template>
@@ -30,13 +30,13 @@
       justify-content space-around
       font-size 26px
       margin 20px
-    img
-      width 200px
-      height 200px
+    .shopPic
+      width 260px
+      height 260px
       position: absolute
       top 550px
       left 50%
-      margin-left -100px
+      margin-left -130px
     .btn
       width 500px
       height 100px
@@ -46,7 +46,7 @@
       border-radius 5px
       border 1px solid #b4282d
       position: absolute
-      top 800px
+      top 830px
       left 50%
       margin-left -250px
 </style>

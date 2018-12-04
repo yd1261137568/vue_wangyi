@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
    <div class="recContent">
-     <TopHeader>
+     <TopHeader >
        <h2 slot="middle">发现。。。。。</h2>
      </TopHeader>
      <!--轮播-->

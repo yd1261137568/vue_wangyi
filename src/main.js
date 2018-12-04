@@ -10,7 +10,11 @@ import Split from './components/Split/Split.vue';
 import ScrollX from './components/ScrollX/ScrollX.vue';
 import TopHeader from './components/TopHeader/TopHeader.vue';
 
-
+// 图片懒加载
+import VueLazyLoad from 'vue-lazyload';
+Vue.use(VueLazyLoad,{
+  loading:'./common/img/loading.gif'
+})
 
 //注册全局路由
 Vue.component('Split',Split);

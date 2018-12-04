@@ -126,9 +126,11 @@
         </section>
         <!--footer-->
         <MsiteFoot/>
+
       </div>
     </div>
-
+    <!--回到顶部-->
+    <GoTop :gotop="gotop"/>
   </div>
 </template>
 <script>
@@ -136,6 +138,7 @@
   import Swiper from 'swiper';
   import {mapState} from 'vuex';
   import MsiteFoot from '../../components/MsiteFoot/MsiteFoot.vue';
+  import GoTop from '../../components/GoTop/GoTop.vue';
 
   export default {
     data () {
@@ -143,7 +146,6 @@
         currentIndex:0
       }
     },
-
     mounted () {
       //触发异步actions，将异步数据保存在state中
       this.$store.dispatch('getBanner');
@@ -162,13 +164,20 @@
     },
     methods:{
       clickLi (index) {
-        this.currentIndex = index
+        this.currentIndex = index ;
+        this.$route.params.id = index;
+        this.$store.dispatch('getId',index);
+        this.$router.replace(`/msite/${index}`)
       },
       _initScroll () {
         this.scroll = new BScroll('.msiteWrap',{
           click:true
         })
-        console.log(this.scroll);
+      },
+
+
+      gotop () {
+        this.scroll.scrollTo(0,0,1000)
       }
 
     },
@@ -190,7 +199,8 @@
       }
     },
     components:{
-      MsiteFoot
+      MsiteFoot,
+      GoTop
     }
   }
 </script>
@@ -201,7 +211,6 @@
       height 1334px
       .header_wrap
         position: fixed
-        /*left 0*/
         top 0
         z-index 50
         background #fff

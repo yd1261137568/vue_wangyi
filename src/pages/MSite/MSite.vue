@@ -20,113 +20,116 @@
         </ul>
       </div>
     </div>
-    <!--轮播-->
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="(bannerItem,index) in banner" :key="index" >
-          <img :src="bannerItem.picUrl" alt="">
+
+    <div class="msiteWrap">
+      <div class="msiteContent">
+        <!--轮播-->
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="(bannerItem,index) in banner" :key="index" >
+              <img :src="bannerItem.picUrl" alt="">
+            </div>
+          </div>
+          <!-- 如果需要分页器 -->
+          <div class="swiper-pagination"></div>
         </div>
+        <div class="icon_three">
+          <div class="item" v-for="(item,index) in msite.policyDescList">
+            <img :src="item.icon"/>
+            <span>{{item.desc}}</span>
+          </div>
+        </div>
+        <Split/>
+        <!--内容区-->
+        <section class="content">
+          <div class="new_person_gifts">
+            <h2>- 新人专享礼 -</h2>
+            <div class="new_person_pic">
+              <div class="left">
+                <p>新人专享礼包</p>
+                <img src="//yanxuan.nosdn.127.net/d074d02fb86bff9bfbf4fa3010d1e1e6.png" alt="">
+              </div>
+              <div class="right">
+                <!--福利社-->
+                <div class="right_welfare">
+                  <p>福利社</p>
+                  <img src="http://yanxuan.nosdn.127.net/9299ddfcc2d152a169aa2ad2461af263.png" alt="">
+                </div>
+                <!--新人拼团-->
+                <div class="right_assemble">
+                  <p>新人拼团</p>
+                  <img src="http://yanxuan.nosdn.127.net/db52ac0a791cecb9129a4a34fc864f48.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <Split/>
+
+          <div class="hot_list">
+            <p>类目热销榜</p>
+            <div class="cloth_and_home">
+              <div class="clothing">
+                <div class="clothing_text">
+                  <span class="text">服装榜</span>
+                  <span class="line"></span>
+                </div>
+                <img src="http://yanxuan.nosdn.127.net/3bcdc4fc75f4086b00fc49672ded1a03.png?imageView&quality=65&thumbnail=200x200" alt="">
+              </div>
+              <div class="home">
+                <div class="clothing_text">
+                  <span class="text">居家榜</span>
+                  <span class="line"></span>
+                </div>
+                <img src="http://yanxuan.nosdn.127.net/d85453ca5b9e6ff24cde180504f4c93e.png?imageView&quality=65&thumbnail=200x200" alt="">
+              </div>
+            </div>
+
+            <div class="other_types">
+              <a href="javascript:;">
+                <span>饮食榜</span>
+                <img src="https://yanxuan.nosdn.127.net/afefef84a592743d93b85b8d11bbc707.png?imageView&quality=65&thumbnail=200x200" alt="">
+              </a>
+              <a href="javascript:;">
+                <span>电器榜</span>
+                <img src="https://yanxuan.nosdn.127.net/362a8249b48d91d99604680b5471b507.png?imageView&quality=65&thumbnail=200x200" alt="">
+              </a>
+              <a href="javascript:;">
+                <span>鞋包配饰榜</span>
+                <img src="https://yanxuan.nosdn.127.net/cbbdd7c5622a0eaab31e42247909c959.png?imageView&quality=65&thumbnail=200x200" alt="">
+              </a>
+              <a href="javascript:;">
+                <span>洗护榜</span>
+                <img src="https://yanxuan.nosdn.127.net/2d43d642d928240ef2013e8da1c133b2.png?imageView&quality=65&thumbnail=200x200" alt="">
+              </a>
+              <a href="javascript:;">
+                <span>餐厨榜</span>
+                <img src="https://yanxuan.nosdn.127.net/f79d6194ad32a781eeb6a434f2267f4f.png?imageView&quality=65&thumbnail=200x200" alt="">
+              </a>
+              <a href="javascript:;">
+                <span>文体榜</span>
+                <img src="https://yanxuan.nosdn.127.net/55425f24345d01992d61a1646325ac94.png?imageView&quality=65&thumbnail=200x200" alt="">
+              </a>
+              <a href="javascript:;">
+                <span>婴童榜</span>
+                <img src="https://yanxuan.nosdn.127.net/1a5b0d77b8f5ccbcb777f16997dd351d.png?imageView&quality=65&thumbnail=200x200" alt="">
+              </a>
+              <a href="javascript:;">
+                <span>特色区榜</span>
+                <img src="https://yanxuan.nosdn.127.net/652a56ba4762111d19735841296f4e98.png?imageView&quality=65&thumbnail=200x200" alt="">
+              </a>
+            </div>
+          </div>
+          <Split/>
+
+          <ScrollX/>
+
+        </section>
+        <!--footer-->
+        <MsiteFoot/>
       </div>
-      <!-- 如果需要分页器 -->
-      <div class="swiper-pagination"></div>
     </div>
 
-    <div class="icon_three">
-      <div class="item" v-for="(item,index) in msite.policyDescList">
-        <img :src="item.icon"/>
-        <span>{{item.desc}}</span>
-      </div>
-    </div>
-    <Split/>
-    <!--内容区-->
-    <section class="content">
-      <div class="new_person_gifts">
-        <h2>- 新人专享礼 -</h2>
-        <div class="new_person_pic">
-          <div class="left">
-            <p>新人专享礼包</p>
-            <img src="//yanxuan.nosdn.127.net/d074d02fb86bff9bfbf4fa3010d1e1e6.png" alt="">
-          </div>
-          <div class="right">
-            <!--福利社-->
-            <div class="right_welfare">
-              <p>福利社</p>
-              <img src="http://yanxuan.nosdn.127.net/9299ddfcc2d152a169aa2ad2461af263.png" alt="">
-            </div>
-            <!--新人拼团-->
-            <div class="right_assemble">
-              <p>新人拼团</p>
-              <img src="http://yanxuan.nosdn.127.net/db52ac0a791cecb9129a4a34fc864f48.png" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-      <Split/>
-
-      <div class="hot_list">
-        <p>类目热销榜</p>
-        <div class="cloth_and_home">
-          <div class="clothing">
-            <div class="clothing_text">
-              <span class="text">服装榜</span>
-              <span class="line"></span>
-            </div>
-            <img src="http://yanxuan.nosdn.127.net/3bcdc4fc75f4086b00fc49672ded1a03.png?imageView&quality=65&thumbnail=200x200" alt="">
-          </div>
-          <div class="home">
-            <div class="clothing_text">
-              <span class="text">居家榜</span>
-              <span class="line"></span>
-            </div>
-            <img src="http://yanxuan.nosdn.127.net/d85453ca5b9e6ff24cde180504f4c93e.png?imageView&quality=65&thumbnail=200x200" alt="">
-          </div>
-        </div>
-
-        <div class="other_types">
-          <a href="javascript:;">
-            <span>饮食榜</span>
-            <img src="https://yanxuan.nosdn.127.net/afefef84a592743d93b85b8d11bbc707.png?imageView&quality=65&thumbnail=200x200" alt="">
-          </a>
-          <a href="javascript:;">
-            <span>电器榜</span>
-            <img src="https://yanxuan.nosdn.127.net/362a8249b48d91d99604680b5471b507.png?imageView&quality=65&thumbnail=200x200" alt="">
-          </a>
-          <a href="javascript:;">
-            <span>鞋包配饰榜</span>
-            <img src="https://yanxuan.nosdn.127.net/cbbdd7c5622a0eaab31e42247909c959.png?imageView&quality=65&thumbnail=200x200" alt="">
-          </a>
-          <a href="javascript:;">
-            <span>洗护榜</span>
-            <img src="https://yanxuan.nosdn.127.net/2d43d642d928240ef2013e8da1c133b2.png?imageView&quality=65&thumbnail=200x200" alt="">
-          </a>
-          <a href="javascript:;">
-            <span>餐厨榜</span>
-            <img src="https://yanxuan.nosdn.127.net/f79d6194ad32a781eeb6a434f2267f4f.png?imageView&quality=65&thumbnail=200x200" alt="">
-          </a>
-          <a href="javascript:;">
-            <span>文体榜</span>
-            <img src="https://yanxuan.nosdn.127.net/55425f24345d01992d61a1646325ac94.png?imageView&quality=65&thumbnail=200x200" alt="">
-          </a>
-          <a href="javascript:;">
-            <span>婴童榜</span>
-            <img src="https://yanxuan.nosdn.127.net/1a5b0d77b8f5ccbcb777f16997dd351d.png?imageView&quality=65&thumbnail=200x200" alt="">
-          </a>
-          <a href="javascript:;">
-            <span>特色区榜</span>
-            <img src="https://yanxuan.nosdn.127.net/652a56ba4762111d19735841296f4e98.png?imageView&quality=65&thumbnail=200x200" alt="">
-          </a>
-        </div>
-      </div>
-      <Split/>
-
-      <ScrollX/>
-
-    </section>
-
-    <!--footer-->
-    <MsiteFoot/>
   </div>
-
 </template>
 <script>
   import BScroll from 'better-scroll';
@@ -150,13 +153,24 @@
         click: true
       });
 
-      this.$store.dispatch('getMsist');
+      this.$store.dispatch('getMsist',() => {
+        this.$nextTick(() => {
+          this._initScroll()
+        })
+      });
 
     },
     methods:{
       clickLi (index) {
         this.currentIndex = index
+      },
+      _initScroll () {
+        this.scroll = new BScroll('.msiteWrap',{
+          click:true
+        })
+        console.log(this.scroll);
       }
+
     },
     computed:{
       ...mapState(['banner','msite','data'])
@@ -178,15 +192,13 @@
     components:{
       MsiteFoot
     }
-
   }
-
 </script>
 <style scoped lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/mixins.styl"
     .wrap
       width 100%
-      height 100%
+      height 1334px
       .header_wrap
         position: fixed
         /*left 0*/
@@ -243,156 +255,161 @@
                   font-weight 700
                   color #b4282d
 
-      .swiper-container
+      .msiteWrap
         width 100%
-        height 400px
-        padding-top 152px
-        .swiper-wrapper
+        height 100%
+        .msiteContent
           width 100%
-          height 400px
-          display flex
-          align-items flex-start
-          .swiper-slide
+          .swiper-container
             width 100%
-            height 100%
-            img
-              width 750px
+            height 400px
+            padding-top 152px
+            .swiper-wrapper
+              width 100%
               height 400px
-      .icon_three
-        margin-bottom: 12px
-        background: #fff
-        display: flex
-        justify-content: space-between
-        align-items: center
-        width: 100%
-        margin-top: 20px
-        .item
-          display: flex
-          width: 33%
-          height 40px
-          margin-left: 15px
-          color: #b4282d
-          img
-           width 24px
-           height 24px
-           vertical-align middle
-          span
-            font-size 24px;
-            margin-left: 5px
-            font-weight 700
-      .content
-        width 100%
-        /*padding 10px 0*/
-        .new_person_gifts
-          padding 0 20px
-          h2
-            font-size 36px
-            text-align: center
-            margin 15px 0
-          .new_person_pic
-            display flex
-            margin 30px 0
-            .left
-              width 343px
-              height 434px
-              background #F9E9CF
-              margin 0 5px
-              position relative
+              display flex
+              align-items flex-start
+              .swiper-slide
+                width 100%
+                height 100%
+                img
+                  width 750px
+                  height 400px
+          .icon_three
+            margin-bottom: 12px
+            background: #fff
+            display: flex
+            justify-content: space-between
+            align-items: center
+            width: 100%
+            margin-top: 20px
+            .item
+              display: flex
+              width: 33%
+              height 40px
+              margin-left: 15px
+              color: #b4282d
+              img
+               width 24px
+               height 24px
+               vertical-align middle
+              span
+                font-size 24px;
+                margin-left: 5px
+                font-weight 700
+          .content
+            width 100%
+            /*padding 10px 0*/
+            .new_person_gifts
+              padding 0 20px
+              h2
+                font-size 36px
+                text-align: center
+                margin 15px 0
+              .new_person_pic
+                display flex
+                margin 30px 0
+                .left
+                  width 343px
+                  height 434px
+                  background #F9E9CF
+                  margin 0 5px
+                  position relative
+                  p
+                    font-size 36px
+                    margin 30px 0 0 20px
+                  img
+                    position absolute
+                    left 65px
+                    top 137px
+                .right
+                  width 343px
+                  height 434px
+                  .right_welfare,.right_assemble
+                    width 343px
+                    height 215px
+                    position: relative
+                    p
+                      font-size 36px
+                      padding 30px 0 0 20px
+                    img
+                      width 200px
+                      height 200px
+                  .right_welfare
+                    background #FBE2D3
+                    margin-bottom 2px
+                    img
+                      position: absolute
+                      left 130px
+                      top 30px
+                  .right_assemble
+                    background #FFECC2
+                    margin-top 2px
+                    img
+                      position: absolute
+                      left 130px
+                      top 30px
+            .hot_list
+              padding 0 20px
+              width 100%
               p
                 font-size 36px
-                margin 30px 0 0 20px
-              img
-                position absolute
-                left 65px
-                top 137px
-            .right
-              width 343px
-              height 434px
-              .right_welfare,.right_assemble
-                width 343px
-                height 215px
-                position: relative
-                p
-                  font-size 36px
-                  padding 30px 0 0 20px
-                img
-                  width 200px
+                margin 25px 0
+              .cloth_and_home
+                width 100%
+                height 200px
+                display flex
+                .clothing,.home
+                  width 340px
                   height 200px
-              .right_welfare
-                background #FBE2D3
-                margin-bottom 2px
-                img
-                  position: absolute
-                  left 130px
-                  top 30px
-              .right_assemble
-                background #FFECC2
-                margin-top 2px
-                img
-                  position: absolute
-                  left 130px
-                  top 30px
-        .hot_list
-          padding 0 20px
-          width 100%
-          p
-            font-size 36px
-            margin 25px 0
-          .cloth_and_home
-            width 100%
-            height 200px
-            display flex
-            .clothing,.home
-              width 340px
-              height 200px
-              line-height 200px
-              background #F9F3E4
-              margin-right 10px
-              position: relative
-              display flex
-              .text
-                position: absolute
-                left 20px
-                top 50%
-                margin-top -125px
-                font-size 26px
-              .line
-                display inline-block
-                width 50px
-                height 6px
-                background #52514F
-                margin-left 20px
-              img
-                width 210px
-                height 210px
-                margin-left 60px
-            .home
-              background #EBEFF6
+                  line-height 200px
+                  background #F9F3E4
+                  margin-right 10px
+                  position: relative
+                  display flex
+                  .text
+                    position: absolute
+                    left 20px
+                    top 50%
+                    margin-top -125px
+                    font-size 26px
+                  .line
+                    display inline-block
+                    width 50px
+                    height 6px
+                    background #52514F
+                    margin-left 20px
+                  img
+                    width 210px
+                    height 210px
+                    margin-left 60px
+                .home
+                  background #EBEFF6
 
 
-          .other_types
-            clearFix()
-            a
-              width 165px
-              height 180px
-              background #F5F5F5
-              float left
-              margin 0 10px 10px 0
-              display flex
-              flex-direction column
-              text-align: center
-              position: relative
-              span
-                font-size 26px
-                margin-top 26px
-              img
-                width 120px
-                height 120px
-                position: absolute
-                left 50%
-                top 60%
-                margin-left -60px
-                margin-top -60px
+              .other_types
+                clearFix()
+                a
+                  width 165px
+                  height 180px
+                  background #F5F5F5
+                  float left
+                  margin 0 10px 10px 0
+                  display flex
+                  flex-direction column
+                  text-align: center
+                  position: relative
+                  span
+                    font-size 26px
+                    margin-top 26px
+                  img
+                    width 120px
+                    height 120px
+                    position: absolute
+                    left 50%
+                    top 60%
+                    margin-left -60px
+                    margin-top -60px
 
 </style>
 <style lang="stylus" rel="stylesheet/stylus">

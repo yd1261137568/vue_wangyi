@@ -6,7 +6,7 @@ export const reqBanner = ()  => ajax('/banner');
 export const reqMsite = () => ajax('/msite');
 //请求data中的数据
 export const reqData = () => ajax('/data');
-
+// 请求识物中的数据
 export const reqRecognition = () => ajax('/recognition');
-
-export const reqNav = () => ajax('/nav');
+// 请求分类中的数据
+export const reqSort = () => ajax('/sort');

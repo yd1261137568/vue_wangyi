@@ -7,3 +7,5 @@ export const RECEIVE_MSITE = 'receive_msite';
 export const RECEIVE_DATA = 'receive_data';
 // 接收识物中的数据
 export const RECEIVE_RECOGNITION = 'receive_recognition';
+//接受分类中的数据
+export const RECEIVE_SORT = 'receive_sort';

@@ -16,5 +16,5 @@ Mock.mock('/msite', {code:0, msite: msite_data})
 //返回识物页数据的接口
 Mock.mock('/recognition', {code:0, recognition: shiwu_data})
 //返回分类页nav数据
-Mock.mock('/nav', {code:0, nav: data_nav})
+Mock.mock('/sort', {code:0, type: data_nav})
 

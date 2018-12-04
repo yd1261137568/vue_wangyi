@@ -1,12 +1,12 @@
 <template>
   <div class="wrap">
-    <div class="profileContainer">
-      <TopHeader>
-        <h2 slot="middle">网易严选</h2>
-      </TopHeader>
-      <div class="logo">
-        <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="">
-      </div>
+    <TopHeader>
+      <h2 slot="middle" style="{margin-left: 50px}">网易严选</h2>
+    </TopHeader>
+    <h1 class="logo">
+      <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="">
+    </h1>
+    <div class="profileContainer" v-if="isShow">
       <button class="phoneLogin" @click="showPhoneView">
         <span><i class="iconfont icon-shouji"></i></span>
         <span>手机号码登录</span>
@@ -17,17 +17,11 @@
       </button>
       <p>手机号快速注册 ></p>
     </div>
-    <div class="loginContainer" v-show="showPhoneLogin">
-      <TopHeader>
-        <h2 slot="middle" style="{margin-left: 50px}">网易严选</h2>
-      </TopHeader>
-      <h1 class="logo">
-        <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="">
-      </h1>
-      <form class="formCommit">
+    <div class="phoneLoginContainer" v-if="showPhoneLogin">
+      <form class="formMsgCommit">
         <div class="msg_login">
           <div class="phone">
-            <lable class="phone_placeHolder" name="">请输入手机号</lable>
+            <lable class="phone_placeHolder" name="">请输入手机号2</lable>
             <div class="phone_line"></div>
           </div>
           <div class="code">
@@ -35,24 +29,25 @@
             <div class="code_line"></div>
             <span>获取验证码</span>
           </div>
-
           <div class="hasProblem">
             <span>遇到问题？</span>
             <span>使用密码验证登陆</span>
           </div>
-
           <button class="phone_login">登陆</button>
-          <button class="other_login">其他登陆方式</button>
+          <button class="other_login" @click="otherLoginType">其他登陆方式</button>
           <p class="phone_regist">注册账号></p>
         </div>
-
-        <div class="email_login" v-show="showEmailLogin">
+      </form>
+    </div>
+    <div class="emailLoginContainer" v-if="showEmailLogin">
+      <form class="formEmailCommit">
+        <div class="email_login" >
           <div class="email">
-            <lable class="email_placeHolder" name="">请输入邮箱</lable>
+            <lable class="email_placeHolder" name="1">请输入邮箱</lable>
             <div class="email_line"></div>
           </div>
           <div class="email_pwd">
-            <lable class="email_placeHolder" name="">请输入邮箱密码</lable>
+            <lable class="email_pwdPlaceHolder" name="2">请输入邮箱密码</lable>
             <div class="email_line"></div>
           </div>
           <div class="regisetOrForgetPwd">
@@ -60,11 +55,11 @@
             <span>忘记密码</span>
           </div>
         </div>
-
         <button class="email_login_button">登陆</button>
-        <button class="other_login">其他登陆方式</button>
+        <button class="other_login" @click="otherLoginType">其他登陆方式</button>
       </form>
     </div>
+
   </div>
 
 </template>
@@ -79,10 +74,17 @@
     },
     methods:{
       showPhoneView(){
+        this.isShow=false,
         this.showPhoneLogin=true
       },
       showEmailView(){
         this.showEmailLogin=true
+        this.isShow=false
+      },
+      otherLoginType () {
+        this.showEmailLogin=false
+        this.showPhoneLogin=false
+        this.isShow=true
       }
     }
   }
@@ -91,30 +93,31 @@
 .wrap
   width 100%
   height 1334px
+  background #fff
+  .header
+    width 100%
+    height 88px
+    line-height 88px
+
+    background #F4F4F4
+    font-size 40px
+    text-align: center
+  .logo
+    width 400px
+    height 200px
+    margin 100px auto 120px
+    position: relative
+    img
+      width 260px
+      height 100px
+      position: absolute
+      top 50%
+      left 50%
+      margin-left -100px
+      margin-top -32px
   .profileContainer
     width 100%
     height 100%
-    background #F4F4F4
-    .header
-      width 100%
-      height 88px
-      line-height 88px
-      background #fff
-      font-size 40px
-      text-align: center
-    .logo
-      width 400px
-      height 200px
-      margin 100px auto 120px
-      position: relative
-      img
-        width 260px
-        height 100px
-        position: absolute
-        top 50%
-        left 50%
-        margin-left -100px
-        margin-top -32px
     .phoneLogin
       width 660px
       height 100px
@@ -145,30 +148,11 @@
       font-size 30px
       text-align: center
       margin-top 480px
-  .loginContainer
+  .phoneLoginContainer
     width 750px
-    height 1300px
-    .header
-      width 100%
-      height 88px
-      line-height 88px
-      background #F4F4F4
-      font-size 40px
-      text-align: center
-    .logo
-      width 400px
-      height 200px
-      margin 20px auto 120px
-      position: relative
-      img
-        width 200px
-        height 64px
-        position: absolute
-        top 50%
-        left 50%
-        margin-left -100px
-        margin-top -32px
-    .formCommit
+    height 1334px
+    background #fff
+    .formMsgCommit
       padding 0 30px
       .msg_login
         .phone
@@ -245,7 +229,9 @@
           color #bdbdbd
           margin-top 20px
 
-
+  .emailLoginContainer
+    .formEmailCommit
+      padding 0 30px
       .email_login
         .email
           width 100%
@@ -265,7 +251,7 @@
           margin-top 25px
           clearFix()
           position: relative
-          .email_placeHolder
+          .email_pwdPlaceHolder
             float left
             font-size 28px
             color #bdbdbd
